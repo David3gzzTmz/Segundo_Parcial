@@ -31,7 +31,7 @@ var Consultar_alumnos= HDB.connect(function(err) {
 
 var  Actualizar_alumnos  = HDB.connect(function(err) {
   console.log("Connected!");
-  HDB.query(" UPDATE alumnos SET Nombre = 'BORRAR ALUMNO' WHERE Id = 2 " , function (err, result, fields) {
+  HDB.query(" UPDATE alumnos SET Nombre = 'BORRAR ALUMNO' WHERE Identificador = 2 " , function (err, result, fields) {
       if (err) throw err;
       console.log(result);
   });
@@ -47,11 +47,12 @@ var  Inserta_alumnos = HDB.connect(function(err) {
 
 var  Borrar_alumnos = HDB.connect(function(err) {
   console.log("Connected!");
-  HDB.query(" DELETE FROM alumnos WHERE Id = 2 " , function (err, result, fields) {
+  HDB.query(" DELETE FROM alumnos WHERE Identificador = 2" , function (err, result, fields) {
       if (err) throw err;
       console.log(result);
   });
 });
 /**/
 
+Actualizar_alumnos;
 Consultar_alumnos;
